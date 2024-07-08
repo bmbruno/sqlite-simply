@@ -155,10 +155,10 @@ using (var connection = _sqlite.CreateConnection())
 }
 ```
 
-## Datatypes
-
 ## Dependencies
 
 Microsoft.Data.Sqlite (8.0.6)
 
 ## License
+
+MIT License. See LICENSE file for additional information.
