@@ -1,10 +1,12 @@
-﻿# README
+﻿# SQLite Simply
 
 ## About
 
 _SQLite Simply_ provides a set of simple tools for interacting with a SQLite database using a database-first model.
 
-It consists of the following classes:
+It's primary goal is to simplify the ceremony of writing ADO.NET code for queries, parameters, and commands.
+
+_SQLite Simply_ consists of the following classes:
 
 * **SQLiteDatabase**: methods for connecting, querying, and executing SQL statements against a SQLite database
 * **SQLiteHelper**: methods for reading and converting C# datatypes to/from SQLite affinity types
