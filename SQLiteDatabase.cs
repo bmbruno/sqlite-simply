@@ -74,11 +74,11 @@ namespace SQLiteSimply
         }
 
         /// <summary>
-        /// Executes an INSERT statement to the database and returns the new ID of the row. New row ID will be an integer. Internal SQL statement and parameters will be used.
+        /// Executes an INSERT statement to the database and returns the new ID of the row. New row ID will be a long (signed 64-bit). Internal SQL statement and parameters will be used.
         /// </summary>
         /// <param name="connection">The active SQLite database connection.</param>
-        /// <returns>New row ID as integer.</returns>
-        public int Insert(SqliteConnection connection)
+        /// <returns>New row ID as a long.</returns>
+        public long Insert(SqliteConnection connection)
         {
             SqliteCommand command = connection.CreateCommand();
             command.CommandText = _sql.ToString();
@@ -97,7 +97,7 @@ namespace SQLiteSimply
             // Note: last_insert_rowid() has some pitfalls; for example, another INSERT could interfere and return a value not related to this INSERT
             // TODO: explore ways to ensure we get the correct value back for this
             command.CommandText = "SELECT last_insert_rowid()";
-            int newID = Convert.ToInt32(command.ExecuteScalar());
+            long newID = Convert.ToInt64(command.ExecuteScalar());
 
             return newID;
         }
