@@ -1,6 +1,6 @@
 ﻿# SQLite Simply
 
-_SQLite Simply_ provides a set of simple tools for interacting with a SQLite database using a database-first model.
+_SQLite Simply_ provides a set of simple tools for interacting with a SQLite database using a database-first model in C#.
 
 It's primary goal is to simplify the ceremony of writing ADO.NET code for queries, parameters, and commands.
 
