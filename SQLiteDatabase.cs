@@ -68,7 +68,8 @@ namespace SQLiteSimply
                     command.Parameters.Add(parameter);
             }
 
-            connection.Open();
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
 
             return command.ExecuteReader();
         }
@@ -89,7 +90,8 @@ namespace SQLiteSimply
                     command.Parameters.Add(parameter);
             }
 
-            connection.Open();
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
 
             command.ExecuteNonQuery();
             command.Parameters.Clear();
@@ -117,7 +119,8 @@ namespace SQLiteSimply
                     command.Parameters.Add(parameter);
             }
 
-            connection.Open();
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
 
             command.ExecuteNonQuery();
         }
